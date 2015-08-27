@@ -42,6 +42,7 @@
 	background: white;
 	#logo {
 		float: left;
+		padding-top:10px;
 		img{
 			width: 100px;
 			padding: 5px 0 5px 0;
@@ -55,29 +56,53 @@
 			color:#397CAC;
 		}
 	}
-	#buttons {
-		float: right;
-		a {
-			line-height: 100px;
-			background: #397CAC;
-			padding: .5em 1em;
-			border-radius: 0.2em;
-			color: white;
-			text-decoration: none;
-			font-weight: 100;
-		}
-	}
-	#nav-links {
-		float: right;
-		a {
-			line-height: 100px;
-			padding: .5em 1em;
-			text-decoration: none;
-			font-weight: 100;
-		}
+	nav{	
+		ul { 
+			// background:yellow;
+			list-style: none;
+			float: right;
+			li {
+				// background:salmon;
+				margin-right:10px;
+				float: left;
+				line-height: 120px;
+				// &:hover {
+				// 	ul {
+				// 		opacity:1 ;
+				// 	}
+				// }
+				
+				// ul {
+				// 	opacity: 0;
+				// 	transition: opacity 1s;
+				// }
+				#buttons {
+		
+					a {	
+						background: #397CAC;
+						padding: .5em 1em;
+						border-radius: 0.2em;
+						color: white;
+						text-decoration: none;
+						font-weight: 100;
+					}
+				}
+				#nav-links {
+					// border: 1px solid green;
 
+					a {
+						padding: .5em 1em;
+						text-decoration: none;
+						font-weight: 100;
+					}
+				}
+			}
+		}
 	}
+	
 }
+
+
 #posts {
 	h1{
 		color: rgba( 0, 0, 0, .7);
@@ -102,8 +127,8 @@
 
 		}
 		.date {
-			margin-top: .25rem;
-			font-size: 0.9rem;
+			margin-top: .55rem;
+			font-size: 0.8em;
 			color: #B2BAC2;
 
 		}
@@ -157,7 +182,10 @@
 
 }
 
-
+#form {
+	width: 60%;
+	margin: 0 auto;
+}
 
 
 

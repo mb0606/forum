@@ -6,10 +6,13 @@
 	- @posts.each do |post|
 		.post
 			%h2.title= link_to post.title, post
-			%p= post.content
+			%p= truncate(post.content, length:200)
 			%p.date  
 				Created 
 				=  time_ago_in_words(post.created_at)
-				ago
-			= link_to "delete", post, method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-default"
+				ago by
+				%strong= post.user.username
 			
+			- if current_user == post.user	
+				= link_to "delete", post, method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-default"
+				
