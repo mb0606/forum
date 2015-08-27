@@ -1,6 +1,8 @@
 %h1 This is a placeholder for post#index
+= link_to "New Post" , new_post_path, class: "btn btn-default"
 
 - @posts.each do |post|
 	%h1= link_to post.title, post
-	= post.content
+	%p= post.content
+	= link_to "delete", post, method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-default"
 	%hr
