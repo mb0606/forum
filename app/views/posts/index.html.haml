@@ -1,13 +1,15 @@
-%h1 ALL POSTS 
-%hr
-= link_to "New Post" , new_post_path, class: "btn btn-default"
-
-- @posts.each do |post|
-	%h1= link_to post.title, post
-	%p= post.content
-	%p  
-		Created 
-		=  time_ago_in_words(post.created_at)
-		ago
-	= link_to "delete", post, method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-default"
+#posts
+	%h1 ALL POSTS 
 	%hr
+
+
+	- @posts.each do |post|
+		.post
+			%h2.title= link_to post.title, post
+			%p= post.content
+			%p.date  
+				Created 
+				=  time_ago_in_words(post.created_at)
+				ago
+			= link_to "delete", post, method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-default"
+			

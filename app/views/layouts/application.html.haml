@@ -3,25 +3,34 @@
 %head
 	%title Forum
 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+	= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lato:300,400,700", type: "text/css"
 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
 	= csrf_meta_tags
 
+
 %body
-	.container
-		.nav.nav-navbar.navbar-default
-			.navbar-header
-				.navbar-navbar-brand
-					= link_to (image_tag  "icon.svg"), root_path, id: "logo"
+	%header.main_header.clearfix
+		.wrapper
+			#logo
+				= link_to (image_tag  "icon.svg"), root_path, id: "logo"
+				%p Artwork by Ozzy
 
-			%ul.nav.navbar-nav.navbar-right
-				%li= link_to "Sign In" , new_user_session_path
-				%li= link_to "Sign Up", new_user_registration_path
+			- if user_signed_in?
+				#buttons= link_to "New Post", new_post_path
+				#nav-links
+					= link_to "Sign Out", destroy_user_session_path, method: :delete
+					= link_to "Account", edit_user_registration_path
 
 
+			- else
+				#nav-links
+					= link_to "Sign Up", new_user_registration_path
+					= link_to "Sign In", new_user_session_path
 
-		.col-sm-12.col-md-8.col-md-offset-2
-			- flash.each do |name, msg|
-				= content_tag(:div, msg, id: "#{name}")
 
-			= yield 
+	.wrapper
+		- flash.each do |name, msg|
+			= content_tag(:div, msg, id: "#{name}")
+	.wrapper
+		= yield 
 
