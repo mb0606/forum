@@ -8,9 +8,18 @@
 
 %body
 	.container
-		%h1 FORUM
-		%hr
-		.col-sm-12
+		.nav.nav-navbar.navbar-default
+			.navbar-header
+				.navbar-navbar-brand
+					= link_to (image_tag  "icon.svg"), root_path, id: "logo"
+
+			%ul.nav.navbar-nav.navbar-right
+				%li= link_to "Sign In" , new_user_session_path
+				%li= link_to "Sign Up", new_user_registration_path
+
+
+
+		.col-sm-12.col-md-8.col-md-offset-2
 			- flash.each do |name, msg|
 				= content_tag(:div, msg, id: "#{name}")
 
