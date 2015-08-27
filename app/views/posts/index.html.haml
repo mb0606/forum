@@ -1,0 +1,6 @@
+%h1 This is a placeholder for post#index
+
+- @posts.each do |post|
+	%h1= link_to post.title, post
+	= post.content
+	%hr

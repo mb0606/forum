@@ -1,0 +1,4 @@
+= simple_form_for(@post) do |f|
+	%p= f.input :title
+	%p= f.input :content, label: "Body"
+	%p= f.submit
