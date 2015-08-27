@@ -8,6 +8,11 @@
 
 %body
 	.container
+		%h1 FORUM
+		%hr
+		.col-sm-12
+			- flash.each do |name, msg|
+				= content_tag(:div, msg, id: "#{name}")
 
-		= yield 
+			= yield 
 
