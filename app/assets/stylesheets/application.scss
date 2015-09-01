@@ -101,7 +101,9 @@
 	}
 	
 }
-
+///////////////////////////////
+//posts
+///////////////////////////////
 
 #posts {
 	h1{
@@ -171,6 +173,7 @@
 
 	#links {
 		text-align: center;
+		padding-bottom:30px;
 		a{
 			color:#297CAC;
 			text-decoration: none;
@@ -182,10 +185,141 @@
 
 }
 
-#form {
+#post_form {
 	width: 60%;
 	margin: 0 auto;
+		input[type="submit"] {
+			width: 100%;
+			background: #397CAC;
+			border: none;
+			color: white;
+			font-weight: 100;
+			padding: .5em 1em;
+			border-radius: .2em;
+		}
+		textarea {
+			width: 100%;
+			min-height: 200px;
+			border: 1px solid #d1d1d1;
+			border-radius: .2em;
+			margin: 1em 0;
+		}
+		// input { 
+		// 	width: 100%;
+		// 	border: 1px solid #d1d1d1;
+		// 	border-radius: .2em;
+		// 	margin: 1em 0;
+			
+		// }
 }
 
+
+
+
+
+///////////////////////////////
+//Comments
+///////////////////////////////
+
+#comments {
+	#comment_count {
+		font-size: 1.75em;
+		padding-bottom:15px;
+		border-bottom: 1px solid rbga(0, 0, 0, .5);
+	}
+}
+
+#comment-form {
+	display:none;
+}
+
+#comments {
+	.comment {
+		border-bottom: 1px solid #d1d1d1;
+		padding-bottom: 1em;
+		margin-bottom: 1em;
+		.content {
+			width: 75%;
+			float: left;
+		}
+		.buttons {
+			width: 25%;
+			float: left;
+			font-size: .8em;
+			text-align: right;
+			padding-top: 1.5em;
+			a {
+				color: #397CAC;
+				border: 1px solid #397CAC;
+				padding: .5em 1em;
+				border-radius: 0.2em;
+				text-decoration: none;
+				margin-right: 2%;
+			}
+		}
+		.comment_content {
+			margin: 0;
+			padding: 0;
+		}
+		.comment_author {
+			color: #397CAC;
+			margin-top: .5rem;
+			font-size: 0.6em;
+			font-weight: 700;
+		}
+	}
+	input[type="submit"] {
+		background: #397CAC;
+		border: none;
+		color: white;
+		font-weight: 100;
+		padding: .5em 1em;
+		border-radius: .2em;
+	}
+	textarea {
+		width: 100%;
+		min-height: 200px;
+		border: 1px solid #d1d1d1;
+		border-radius: .2em;
+		margin: 1em 0;
+	}
+}
+
+
+
+///////////////////////////////
+//Media
+///////////////////////////////
+
+@media  (max-width: 900px) {
+	.wrapper {
+		width: 90%;
+	}
+}
+@media  (max-width: 600px) {
+	.wrapper {
+		width: 90%;
+		}
+	#post_form {
+		width:100%;
+	}
+}
+
+@media  (max-width: 500px) {
+	.wrapper {
+		width: 100%;
+		}
+	.buttons {
+		width: 100%;
+		float:none;
+	}
+	.content {
+		width: 100%;
+		float: none;
+	}
+	.clearfix{
+		clear:none;
+	}
+}
 
 

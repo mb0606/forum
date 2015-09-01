@@ -6,6 +6,17 @@
 		Created by
 		%strong= @post.user.username
 
+	#comments
+		%h3= link_to "Reply to thread" , "#", class:"btn btn-default"
+		#comment-form
+			= render "comments/form"
+
+		#comment_count
+			= pluralize(@post.comments.count,"Comment" )
+		= render @post.comments 
+
+
+
 	#links
 		= link_to "Back", root_path
 		- if current_user == @post.user		

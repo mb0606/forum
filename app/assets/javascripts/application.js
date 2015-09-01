@@ -15,3 +15,12 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function() {
+	$("#comments h3 a").click(function(event){
+		event.preventDefault() ;
+		$("#comment-form").toggle();
+
+	});
+});
